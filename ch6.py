@@ -3,6 +3,10 @@
 Created on Sun Mar 13 22:47:28 2016
 
 @author: Moon
+明天從這個檔案開始改起
+在p185,這裡有四個要求
+1：字典的建立要以一氣呵成的方式來進行
+2：將字典的建立程式碼往 get_coach_data()
 """
 def sanitize(time_string):
     if '-' in time_string:
