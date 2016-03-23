@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sun Mar 13 22:47:28 2016
+
 @author: Moon
 明天從這個檔案開始改起
 在p185,這裡有四個要求
@@ -24,12 +25,7 @@ def get_coach_data(filename):
         with open(filename) as file:
             data = file.readline()
         files = data.strip().split(',')
-        diction = {}
-        diction['Name'] = files.pop(0)
-        diction['DOB'] = files.pop(0)
-        diction['time'] = files
-        diction['printout'] = str(sorted(set([sanitize(t) for t in files]))[0:3])
-        return (diction) 
+        return (files)
         
     except IOError as ioerr:
         print('File error: ' + str(ioerr))
@@ -39,19 +35,19 @@ def get_coach_data(filename):
         
 sarah = get_coach_data('sarah2.txt')
 (sarah_name, sarah_dob) = sarah.pop(0), sarah.pop(0)
+
 print(sarah_name + "'s fastest times are: " + str(sorted(set([sanitize(t) for t in sarah]))[0:3]))
 """
 
-sarah_dict = get_coach_data('sarah2.txt')
+sarah_list = get_coach_data('sarah2.txt')
 
-"""
 sarah = {}
 
 sarah['Name'] = sarah_list.pop(0)
 sarah['DOB'] = sarah_list.pop(0)
 
 sarah['result']=sarah_list
-"""
-print(str(sarah_dict['Name']) + 
+
+print(str(sarah['Name']) + 
 "'s fastest times are: " + 
-str(sarah_dict['printout']))
+str(sorted(set([sanitize(t) for t in sarah_list]))[0:3]))
