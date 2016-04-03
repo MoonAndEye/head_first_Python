@@ -23,11 +23,21 @@ def include_footer(the_links):
     with open('templates/footer.html') as footf:
         foot_text = footf.read()
     link_string = ''
+    """
+    要先把link_string設為空，讓python知道現在要處理string
+    一開始開啟的檔 templates/footer.html
+    裡面可能有很多超連結
+    然後最後把原來的link換掉
+    """
     for key in the_links:
         link_string += '<a href="' + the_links[key] + '">' + key + '</a>&nbsp;&nbsp;&nbsp;&nbsp;'
     footer = Template(foot_text)
     return(footer.substitute(links=link_string))
+"""
+這是footer, 不太確定這個是不是一定要加的
+看結構可能是一個 dict
 
+"""
 def start_form(the_url, form_type="POST"):
     return('<form action="' + the_url + '" method="' + form_type + '">')
 
