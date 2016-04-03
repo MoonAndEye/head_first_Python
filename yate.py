@@ -40,13 +40,28 @@ def include_footer(the_links):
 """
 def start_form(the_url, form_type="POST"):
     return('<form action="' + the_url + '" method="' + form_type + '">')
+"""
+回傳表單的開頭
+包含方法,但什麼是方法? 看來是method
+"""
 
 def end_form(submit_msg="Submit"):
     return('<p></p><input type=submit value="' + submit_msg + '"></form>')
+"""
+回傳表單結尾?
+而且可以做出submit按鈕的文字?
+應該是更改 submit_msg就可以了，預設是"Submit"
+"""
 
 def radio_button(rb_name, rb_value):
     return('<input type="radio" name="' + rb_name +
                              '" value="' + rb_value + '"> ' + rb_value + '<br />')
+"""
+建立 radio_button的表單
+
+可能可以建立一系列radio_button
+"""
+
 
 def u_list(items):
     u_string = '<ul>'
@@ -54,10 +69,25 @@ def u_list(items):
         u_string += '<li>' + item + '</li>'
     u_string += '</ul>'
     return(u_string)
+"""
+<ul>應該是無偏號列表?
+某種列表模式
+但一直輸入不是很好的方式，就寫一個 def 來表示吧
+"""
+
 
 def header(header_text, header_level=2):
     return('<h' + str(header_level) + '>' + header_text +
            '</h' + str(header_level) + '>')
+"""
+這是表頭
+每個html都要有header, level = 2, 這不確定是什麼
+可能在後面有header 1 header 2?
+"""
+
 
 def para(para_text):
     return('<p>' + para_text + '</p>') 
+"""
+就只是段絡
+"""
